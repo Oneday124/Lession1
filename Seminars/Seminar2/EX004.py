@@ -2,7 +2,4 @@
 
 n = int(input('Введите N: '))
 for i in range(n):
-    if i % 2 == 0:
-        print(3 ** i, end=' ')
-    else:
-        print(-3 ** i, end=' ')
+        print((-3) ** i, end =' ')
