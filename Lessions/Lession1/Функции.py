@@ -8,4 +8,4 @@ def f(x):
 
 arg = 1
 print(f(arg))
-print(type(f(arg)))
+# print(type(f(arg)))
