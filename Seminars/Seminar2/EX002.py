@@ -3,3 +3,4 @@
 
 simple_input = "Timur forever young"
 print(simple_input.count(' ') + 1)
+print(len(simple_input.split()))
