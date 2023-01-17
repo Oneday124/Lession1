@@ -1,7 +1,9 @@
 # Создать текстовый файл, записать в него построчно данные, которые вводит пользователь.
 # Окончанием ввода пусть служит пустая строка
 
-with open('file.txt', 'a') as data:
-    path = input('Введите текст: ')
-    data.write(path)
-data.close()
+data = open('file.txt', 'w')
+while True:
+    str1 = input('ВВедите текст: ')
+    data.writelines(str1 + '\n')
+    if str1 == '':
+        break
