@@ -10,3 +10,17 @@ print(text.replace('еще', 'ЕЩЕ'))   # Замена
 # вызов подсказок по встроенным методам
 
 help(text.lower)
+# Индексация строк
+
+print(text[0])                      # с
+print(text[1])                      # ъ
+print(text[len(text)-1])            # к
+print(text[-1])                     # к
+print(text[:])                      # съешь еще этих мягких французских булок
+print(text[:2])                     # съ
+print(text[20:])                    # х французских булок
+print(text[6:-19])                  # еще этих мягки
+print(text[::6])                    # сеикакл от 0 до конца строки с шагом 6
+
+text = text[2:9] + text[-5] + text[:2]      # ешь ещебсъ
+print(text)
