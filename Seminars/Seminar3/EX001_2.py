@@ -42,13 +42,22 @@
 # Напишите программу для печати всех уникальных значений в словаре
 # input [{'V':'S001'},{'V':'S002'},{'VI':'S001'},{'VI':'S005'},{'VII':'S005'},{'V':'S009'},{'VIII':'S007'}]
 # Output {'S005','S002','S007','S001','S009'}
-dictionary = {'V ': 'S001', ' V': 'S002', ' VI': 'S001', 'VI': 'S005', 'VII': 'S005', ' V ': 'S009', 'VIII': 'S007'}
-new_list = set()
+# dictionary = {'V ': 'S001', ' V': 'S002', ' VI': 'S001', 'VI': 'S005', 'VII': 'S005', ' V ': 'S009', 'VIII': 'S007'}
+# new_list = set()
+# for item in dictionary:
+#     print(dictionary[item])
+#     new_list.add(dictionary[item])
+# print(new_list)
 
-for item in dictionary:
-    print(dictionary[item])
-    new_list.add(dictionary[item])
-print(new_list)
+# решение группы
+dictionary = [{'V':'S001'}, {'V':'S002'}, {'VI':'S001'}, {'VI':'S005'}, {'VII':'S005'}, {'V':'S009'}, {'VIII':'S007'}]
+arr = []
+for d in dictionary:
+    for val in list(d.values()):
+        if val not in arr:
+            arr.append(val)
+print(arr)
+
 
 # Дан массив, состоящий из целых чисел. Напишите программу, которая подсчитает количество элементов массива,
 # больших предыдущего
