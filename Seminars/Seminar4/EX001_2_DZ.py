@@ -32,17 +32,12 @@
 # находясь перед некоторым кустом заданной во входном файле грядки.
 
 list_1 = [61, 8, 12, 5, 14, 10]
-max_sum = 0
+maximum = 0
 i = 0
-sum_i = 0
+summa = 0
 for list_1[i] in list_1:
-    if i == 0:
-        sum_i = list_1[-1] + list_1[i] + list_1[i+1]
-    elif i == len(list_1)-1:
-        sum_i = list_1[-2] + list_1[-1] + list_1[0]
-    else:
-        sum_i = list_1[i] + list_1[i-1] + list_1[i+1]
-    if sum_i > max_sum:
-        max_sum = sum_i
+    summa = list_1[i-2] + list_1[i-1] + list_1[i]
+    if summa > maximum:
+        maximum = summa
     i += 1
-print(max_sum)
+print(maximum)
