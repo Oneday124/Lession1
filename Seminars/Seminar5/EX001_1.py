@@ -25,12 +25,19 @@
 
 # Написать функцию для нахождения наибольшего общего делителя 2х чисел
 
-x = 80
-y = 60
-def nod(x, y):
-    if x < y:
-        x, y = y, x
-    if x % y == 0:
-        return y
-    return nod(y, x % y)
-print(nod(x, y))
+# x = 80
+# y = 60
+# def nod(x, y):
+#     if x < y:
+#         x, y = y, x
+#     if x % y == 0:
+#         return y
+#     return nod(y, x % y)
+# print(nod(x, y))
+
+# найти сумму цифр числа
+def sum_number(n: int):
+    if (n // 10) == 0:
+        return n%10
+    return sum_number(n//10) + n % 10
+print(sum_number(2122))
