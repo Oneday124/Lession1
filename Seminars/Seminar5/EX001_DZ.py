@@ -3,7 +3,7 @@
 # Пример: А = 3б В = 5 -> 243 (3**5)
 
 # def Degree(a, b):
-#     if b == 1:
+#     if b == 0:
 #         return a
 #     return Degree(a, b-1) * a
 #
