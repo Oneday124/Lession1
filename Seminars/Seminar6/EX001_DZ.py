@@ -10,7 +10,7 @@
 # def Progression(a, n, d):
 #     arr = []
 #     for i in range(d):
-#         an = a + (n - 1) * i
+#         an = a + n * i
 #         arr.append(an)
 #     return arr
 #
