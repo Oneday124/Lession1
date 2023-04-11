@@ -26,7 +26,6 @@ arr = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
 minArr = int(input('Введите минимум: '))
 maxArr = int(input('Введите максимум: '))
 
-
 def IndexReturn(arr, min, max):
     arrInd = []
     for i in range(len(arr)):
