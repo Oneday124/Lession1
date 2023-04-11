@@ -3,9 +3,19 @@
 # input 7 2 5
 # output 7 9 11 13 15
 
-# a = int(input('Введите первый элемент: '))
-# n = int(input('Введите разность: '))
-# d = int(input('Введите количество элементов: '))
+a = int(input('Введите первый элемент: '))
+n = int(input('Введите разность: '))
+d = int(input('Введите количество элементов: '))
+
+def RecursionProgress(a, n, d, arr = []):
+    if d == 0:
+        return arr
+    arr.insert(0, a + n * (d-1))
+    return RecursionProgress(a, n, d - 1)
+
+print(RecursionProgress(a, n, d))
+
+
 #
 # def Progression(a, n, d):
 #     arr = []
@@ -17,20 +27,21 @@
 # print(Progression(a, n, d))
 
 
+
 # Определить индексы лементов массива (списка), значения которых принадлежат заданному диапазону (т.е не
 # меньше заданного минимума и не больше заданного максимума)
 # inout [-5, 9, 0, 9, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
 # output [1, 9, 13, 14, 19]
 
-arr = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
-minArr = int(input('Введите минимум: '))
-maxArr = int(input('Введите максимум: '))
-
-def IndexReturn(arr, min, max):
-    arrInd = []
-    for i in range(len(arr)):
-        if min <= arr[i] <= max:
-            arrInd.append(i)
-    return arrInd
-
-print(IndexReturn(arr, minArr, maxArr))
+# arr = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# minArr = int(input('Введите минимум: '))
+# maxArr = int(input('Введите максимум: '))
+#
+# def IndexReturn(arr, min, max):
+#     arrInd = []
+#     for i in range(len(arr)):
+#         if min <= arr[i] <= max:
+#             arrInd.append(i)
+#     return arrInd
+#
+# print(IndexReturn(arr, minArr, maxArr))
