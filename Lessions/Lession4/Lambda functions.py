@@ -1,7 +1,7 @@
 def calk2(a, b):
     return a * b
 
-def math(op, x, y):
+def math(op, x = 15, y=5):
     print(op(x, y))
 
 # def calk1(a,b):             # = calk1 = lambda a, b: a + b
@@ -10,7 +10,7 @@ def math(op, x, y):
 # calk1 = lambda a, b: a + b            # = math(lambda a, b: a + b, 5, 45)
 # math(calk1, 5, 45)
 
-math(lambda a, b: a + b, 5, 45)
+math(lambda a, b: a + b)
 
 # В списке хранятся числа. Нужно выбрать только четные числа и составить список пар (число: квадрат числа)
 # Пример: 1 2 3 5 8 15 23 38
