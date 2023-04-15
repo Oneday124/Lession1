@@ -2,7 +2,7 @@
 # list comprehension - упрощенный подход к созданию списка, который задействует цикл for,
 # а так же инструкции if-else для определения того, что окажется в финальном списке
 
-# Создение
+# Создaние
 # list_1 = [exp for item in iterable] - exp - что добавляем, item - индекс, iterable - коллекция
 
 list_1 = [None for item in range(5)]
