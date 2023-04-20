@@ -7,10 +7,35 @@
 # *Пример:**Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да
 #  **Вывод:** Парам пам-пам
 
-# string = 'пара-ра-рам рям-пам-папум па-ра-п-да'
-# arr = string.split()
+# string = 'пара-ра-рам рам-пам-папам па-ра-па-да'
+# arr = string.upper().split()
 #
-# string1 = list(filter(lambda x: x.count('а') == arr[0].count('а'), arr))
+# string1 = list(filter(lambda x: x.count('А') == arr[0].count('А'), arr))
+# print(string1)
+# print(arr)
+# if arr == string1:
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
+
+# для всех гласных
+
+# string = 'пяру-ра-рем рам-пам-папам па-ра-па-да'
+# arr2 = 'ауеыоэяию'
+# def rep(string, arr2):
+#     string2 = ''
+#     for i in string:
+#         if i in arr2:
+#             i = 'а'
+#             string2 += i
+#         else:
+#             string2 += i
+#     return string2
+#
+# string2 = rep(string, arr2)
+#
+# arr = string2.upper().split()
+# string1 = list(filter(lambda x: x.count('А') == arr[0].count('А'), arr))
 #
 # if arr == string1:
 #     print('Парам пам-пам')
@@ -28,10 +53,8 @@
 
 # def print_operation_table(operation, num_rows = 6, num_columns = 6):
 #     for x in range(1, num_rows+1):
-#         str1 = ''
 #         for y in range(1, num_columns+1):
-#             if y <= num_columns+1:
-#                 str1 = str1 + ' ' + str(operation(x, y))
-#         print(str1)
-
+#             print(operation(x, y), end='\t')
+#         print()
+#
 # print_operation_table(lambda x, y: x * y)
