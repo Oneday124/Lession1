@@ -38,7 +38,6 @@ def work_with_phonebook():
             write_txt(file_name, 'phon.txt')
         choice = show_menu()
 
-
 def print_resuil(phone_book):
     for item in phone_book:
         print(item, sep = '\n')
