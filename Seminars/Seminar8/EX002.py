@@ -4,7 +4,7 @@
 # 2. Программа должна сохраныть данные в текстовом формате
 # 3. Пользователь может ввести одну из характеристик для поиска определенной записи (имя или фамилию)
 # 4. Использование функций. Программа не должна быть линейной
-
+import shutil
 
 def show_menu() -> int:
     print("\nВыберите необходимое действие:\n"
@@ -13,15 +13,17 @@ def show_menu() -> int:
             "3. Найти абонента по номеру телефона\n"
             "4. Добавить абонента в справочник\n"
             "5. Сохранить справочник в текстовом формате\n"
-            "6. Закончить работу")
+            "6. Удалить абонента из справочника\n"          
+            "7. Закончить работу")
     choice = int(input('Выберите пункт меню: '))
     return choice
 
 def work_with_phonebook():
     choice = show_menu()
     phone_book = read_phone_book('phon.txt')
+    temp_book = read_phone_book('temp.txt')
 
-    while choice != 6:
+    while choice != 7:
         if choice == 1:
             print_resuil(phone_book)
         elif choice == 2:
@@ -36,6 +38,11 @@ def work_with_phonebook():
         elif choice == 5:
             file_name = get_file_name()
             write_txt(file_name, 'phon.txt')
+        elif choice == 6:
+            shutil.copyfile('phon.txt', 'temp.txt')
+            name = get_search_name()
+            line = count_line_del(phone_book, name)
+            # delete_user(phone_book, temp_book, line)
         choice = show_menu()
 
 def print_resuil(phone_book):
@@ -90,10 +97,31 @@ def get_file_name():
 
 def write_txt(file_name, phone_book):
     with open(phone_book, 'r', encoding='utf-8') as phone_book, \
-            open(file_name + '.txt', 'a', encoding='utf-8') as file_name:
+            open(file_name + '.txt', 'w', encoding='utf-8') as file_name:
         for line in phone_book:
             file_name.write(line + '\n')
     print(f'Справочник успешно сохранен')
+
+# def delete_user(phone_book, temp_book, name):
+#     with open(phone_book, 'r', encoding='utf-8') as phone_book, \
+#              open(temp_book, 'r', encoding='utf-8') as temp_book:
+#         for line in phone_book:
+#             file_name.write(line + '\n')
+
+
+
+def count_line_del(phone_book, name):
+    line = 0
+    res = 0
+    for item in phone_book:
+        if name != item['Фамилия'] and name != item['Имя']:
+            line += 1
+        else:
+            line += 1
+            resoult = line
+    return res
+
+
 
 work_with_phonebook()
 
