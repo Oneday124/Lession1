@@ -23,12 +23,13 @@ def work_with_phonebook():
     phone_book = read_phone_book('phon.txt')
     temp_book = read_phone_book('temp.txt')
 
-    while choice != 7:
+    while (choice != 7):
         if choice == 1:
             print_resuil(phone_book)
         elif choice == 2:
             name = get_search_name()
             print(find_by_name(phone_book, name))
+            print(type(find_by_name(phone_book, name)))
         elif choice == 3:
             number = get_search_number()
             print(find_by_number(phone_book, number))
@@ -39,10 +40,8 @@ def work_with_phonebook():
             file_name = get_file_name()
             write_txt(file_name, 'phon.txt')
         elif choice == 6:
-            shutil.copyfile('phon.txt', 'temp.txt')
-            name = get_search_name()
-            line = count_line_del(phone_book, name)
-            # delete_user(phone_book, temp_book, line)
+            last_name = get_search_name()
+            print(delete_user(phone_book, last_name))
         choice = show_menu()
 
 def print_resuil(phone_book):
@@ -65,8 +64,8 @@ def get_search_name():
 def find_by_name(phone_book, name):
     for item in phone_book:
         if name == item['Фамилия'] or name == item['Имя']:
-            print(item)
-    return work_with_phonebook()
+              return item
+    return 'Пользователь не найден'
 
 def get_search_number():
     number = input('Введите номер телефона для поиска: ')
@@ -75,8 +74,8 @@ def get_search_number():
 def find_by_number(phone_book, number):
     for item in phone_book:
         if number == item['Телефон']:
-            print(item)
-    return work_with_phonebook()
+            return item
+    return 'Пользователь не найден'
 
 def get_new_user():
     new_user = ''
@@ -102,25 +101,13 @@ def write_txt(file_name, phone_book):
             file_name.write(line + '\n')
     print(f'Справочник успешно сохранен')
 
-# def delete_user(phone_book, temp_book, name):
-#     with open(phone_book, 'r', encoding='utf-8') as phone_book, \
-#              open(temp_book, 'r', encoding='utf-8') as temp_book:
-#         for line in phone_book:
-#             file_name.write(line + '\n')
-
-
-
-def count_line_del(phone_book, name):
-    line = 0
-    res = 0
-    for item in phone_book:
-        if name != item['Фамилия'] and name != item['Имя']:
-            line += 1
-        else:
-            line += 1
-            resoult = line
-    return res
-
+def delete_user(data:list, last_name:str) -> str:
+    for i in range(len(data)):
+        print(data[i])
+        if data[i].get('Фамилия') == last_name:
+            del data[i]
+            return f'Абонент {last_name} успешно удален'
+        return 'Такой абонент отсутствует в списке'
 
 
 work_with_phonebook()
